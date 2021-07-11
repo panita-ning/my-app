@@ -1,0 +1,121 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;  margin: auto;
+  height: 380px;
+}
+
+
+.Card-body {
+  background-color:#F0F8FF;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  height: 500%;
+  margin: auto;
+  padding: 10px;
+  
+}
+
+.text {
+  color: black;
+}
+
+.font-haeds {
+  padding: 130px;
+  margin: auto;
+  color: black;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif
+}
+
+.Card-Title{
+  width: 1500px;
+  max-width: 400px;
+  padding: 15px;  margin: auto;
+  height: 200px;
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 1px;
+  margin-left: -60% ;
+}
+
+.profile-body{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;  margin: auto;
+  height: 1100px;
+}
+.body-all{
+  width: 450px;
+  max-width: 600px;
+  padding: 15px;  margin: auto;
+  height: 650px;
+  align-self:  flex-start;
+  margin: -65% 10%;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.250), 0 5px 5px rgba(0, 0, 0, 0.11);
+  position: relative;
+  overflow: hidden;
+  /* background-color:#F0FFFF; */
+}
+
+.font-haed{
+  padding: 35px;
+  margin: auto;
+  color: black;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif
+}
+
+#components-layout-demo-top-side .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top-side .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.site-layout-background {
+  background: #fff;
+}
