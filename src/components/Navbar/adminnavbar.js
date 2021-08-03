@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 const { Header, Content, Footer } = Layout;
 
 
-const Navbarbrand = (props) => {
+const Navbaradmin = (props) => {
   const { SubMenu } = Menu;
   const router = useRouter()
   return (
@@ -22,7 +22,7 @@ const Navbarbrand = (props) => {
             <span onClick={() => router.push("/user/profileone")}> ข้อมูลส่วนตัว</span>
           </Menu.Item>
           <Menu.Item style={{ color: "white", fontSize: 16 }}>
-            <span onClick={() => router.push("/user/search")}> Job Match </span>
+            <span onClick={() => router.push("/user/search")}> ค้นหา </span>
           </Menu.Item>
           <Menu.Item key="3"><span onClick={() => router.push("/user/jobone")} style={{ color: "white", fontSize: 16 }}> ประวัติการสมัครงาน</span></Menu.Item>
           <Menu.Item key="4"><span onClick={() => router.push("/user/jobtwo")} style={{ color: "white", fontSize: 16 }}> ตั้งค่าการใช้งาน</span></Menu.Item>
@@ -35,4 +35,4 @@ const Navbarbrand = (props) => {
   );
 }
 
-export default Navbarbrand;
+export default Navbaradmin;

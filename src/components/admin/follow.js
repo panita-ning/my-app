@@ -1,10 +1,12 @@
 import React from "react";
-import { Table, Card, Input, Button, Space } from 'antd';
+import { Table, Card, Input, Button, Space ,Typography} from 'antd';
 
+const { Title } = Typography;
 const { Search } = Input;
 const onSearch = value => console.log(value);
 
 const columns = [
+    { title: 'ลำดับ', dataIndex: 'id', key: 'id' },
     { title: 'ชื่อ', dataIndex: 'us_firstname', key: 'us_firstname' },
     { title: 'นามสกุล', dataIndex: 'us_lastname', key: 'us_lastname' },
     { title: ' ชื่อตำแหน่งงาน', dataIndex: 'ps_name ', key: 'ps_name' },
@@ -33,6 +35,7 @@ const columns = [
 const data = [
     {
         key: 1,
+        id : '1',
         us_firstname: 'xxxxxxx',
         us_lastname: 'xxxxxxx',
         ps_name: 'xxxxxxx',
@@ -43,6 +46,7 @@ const data = [
     },
     {
         key: 1,
+        id : '2',
         us_firstname: 'xxxxxxx',
         us_lastname: 'xxxxxxx',
         ps_name: 'xxxxxxx',
@@ -50,23 +54,64 @@ const data = [
         expire_date: 'xxxxxxx',
         cp_name: 'xxxxxxx'
 
-    }
+    },
+    {
+        key: 1,
+        id : '3',
+        us_firstname: 'xxxxxxx',
+        us_lastname: 'xxxxxxx',
+        ps_name: 'xxxxxxx',
+        accept_date: 'xxxxxxx',
+        expire_date: 'xxxxxxx',
+        cp_name: 'xxxxxxx'
+
+    },
+    {
+        key: 1,
+        id : '4',
+        us_firstname: 'xxxxxxx',
+        us_lastname: 'xxxxxxx',
+        ps_name: 'xxxxxxx',
+        accept_date: 'xxxxxxx',
+        expire_date: 'xxxxxxx',
+        cp_name: 'xxxxxxx'
+
+    },
+    {
+        key: 1,
+        id : '5',
+        us_firstname: 'xxxxxxx',
+        us_lastname: 'xxxxxxx',
+        ps_name: 'xxxxxxx',
+        accept_date: 'xxxxxxx',
+        expire_date: 'xxxxxxx',
+        cp_name: 'xxxxxxx'
+
+    },
 
 ];
 const Follow = (props) => {
     return (
         <>
+        <br/>
+        <Card hoverable> 
+            
             <div>
-                <div>
-                    <Search
+               
+                <div style={{width:300,position:'absolute', top:'40px', right:'20px'}}>
+                    <Search 
                         placeholder="ค้นหาข้อมูลการรับเข้าทำงาน"
                         allowClear
-                        enterButton="Search"
+                        enterButton="Search" 
                         size="large"
                         onSearch={onSearch}
                     />
                 </div>
-                <br />
+                <br/>
+                 <div>
+                     <Title level={3}>ข้อมูลการรับเข้าทำงาน </Title>
+                 </div>
+               
                 <Card>
                     <Table
                         columns={columns}
@@ -77,6 +122,7 @@ const Follow = (props) => {
                 </Card>
             </div>
 
+        </Card>
         </>
     )
 }

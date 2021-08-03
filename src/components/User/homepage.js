@@ -4,11 +4,17 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption, Card, Button, CardImg, CardTitle, CardText, CardGroup, CardDeck,
+  CarouselCaption, Card,  CardImg, CardTitle, CardText, CardGroup, CardDeck,
   CardSubtitle, CardBody
 } from 'reactstrap';
-import { useState } from 'react';
+import { Col, Row, TreeSelect ,Button, } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router'
+
+const { TreeNode } = TreeSelect;
+
+
 
 const items = [
   {
@@ -62,10 +68,19 @@ const Homepang = (props) => {
       </CarouselItem>
     );
   });
+
+  const [value, setValue] = useState(undefined);
+  const onChange = () => {
+    setValue(value);
+  };
+
+
   return (
-    <div style={{
-      backgroundColor: '#DCDCDC', padding: '50px'
+    <>
+    <Card div style={{
+      backgroundColor: '#FFFFFF',  width:"auto", height:"auto", border:1
     }}>
+    <div>
       <Carousel
         activeIndex={activeIndex}
         next={next}
@@ -76,12 +91,88 @@ const Homepang = (props) => {
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
       </Carousel>
+      
+      <div>
+        <Card style={{ width:"auto", height:250, backgroundColor: '#DCDCDC' }}>
+          &nbsp;&nbsp;<br/><br/><br/>
+          <Row>
+            <Col>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <TreeSelect
+                showSearch
+                style={{ width: 400, borderRadius: 10 }}
+                value={value}
+                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                placeholder="ประเภทงานทั้งหมด(สาขสอาชีพ)"
+                allowClear
+                treeDefaultExpandAll
+                onChange={onChange}
+                
+              >
+                <TreeNode value="parent 1" title="คอมพิวเตอร์"></TreeNode>
+                <TreeNode value="parent 1" title="กฏหมาย"></TreeNode>
+                <TreeNode value="parent 1" title="บัญชี / การตลาด"></TreeNode>
+                <TreeNode value="parent 1" title="Part-time"></TreeNode>
+              </TreeSelect>
+            </Col>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Col>
+              <TreeSelect
+                showSearch
+                style={{ width: 400, borderRadius:10 }}
+                value={value}
+                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                placeholder="สถานที่ทำงาน"
+                allowClear
+                treeDefaultExpandAll
+                onChange={onChange}
+                
+              >
+                <TreeNode value="parent 1" title="กรุงเทพมหานคร"></TreeNode>
+                <TreeNode value="parent 1" title="กระบี่"></TreeNode>
+                <TreeNode value="parent 1" title="กาญจนบุรี"></TreeNode>
+                <TreeNode value="parent 1" title="กาฬสินธุ์"></TreeNode>
+              </TreeSelect>
+            </Col>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Col>
+              <TreeSelect
+                showSearch
+                style={{ width: 400 }}
+                value={value}
+                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                placeholder="ตำแหน่งงาน"
+                allowClear
+                treeDefaultExpandAll
+                onChange={onChange}
+              >
+                <TreeNode value="parent 1" title="parent 1"> </TreeNode>
+
+              </TreeSelect>
+            </Col>
+          </Row>
+          <br /> <br />
+          <div>
+            <Row justify="center">
+              <Col >
+                <Button type="default" style={{borderRadius:10, width:200}} size='large' danger>
+                  รีเซ็ตเงื่อนไข
+                </Button>
+              </Col>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Col>
+                <Button type="primary" danger style={{borderRadius:10, width:200}} size='large'>
+                  ค้นหางาน
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        </Card>
+      </div>
+
       <br />
       <CardText style={{ fontSize: 30, color: 'Black' }}>&nbsp;&nbsp;&nbsp;TOP COMPANIES</CardText>
-
-
       <CardGroup >
-
         <Card style={{ width: 200, height: 300 }}>
           <img style={{ width: 100 }} alt=" "
             src="data:image/png;base64,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"
@@ -164,7 +255,7 @@ const Homepang = (props) => {
             <CardTitle tag="h5">Home Product Center (Public) Co., Ltd.</CardTitle>
             <CardSubtitle tag="h6" className="mb-2 text-muted">บริษัท โฮม โปรดักส์ เซ็นเตอร์ จำกัด (มหาชน) เปิดรับพนักงานหลายตำแหน่ง</CardSubtitle>
             <Button>
-            <span onClick={() => router.push("/job")}>รายละเอียด</span>
+              <span onClick={() => router.push("/user/jobdata")}>รายละเอียด</span>
             </Button>
           </CardBody>
         </Card>
@@ -187,7 +278,10 @@ const Homepang = (props) => {
           </CardBody>
         </Card>
       </CardDeck>
-    </div>
+    </div >
+    </Card>
+    </>
   );
+  
 }
 export default Homepang;

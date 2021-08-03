@@ -8,37 +8,40 @@ const Registor = (props) => {
   return (
     <div className="div-back">
       <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Form className="Card-body" >
         <Form className="reg-body">
           <br />
-          <h1>
-            <span className="font-haeds"> สมัครสมาชิกสำหรับผู้สมัครงาน </span>
-          </h1>
+          <center>
+            <h1>
+              <span className="font-haeds"> สมัครสมาชิก</span>
+            </h1>
+          </center>
           <br />
           <FormGroup>
-            <Label for="identity">ผู้ใช้งาน</Label>
-            <Input type="text" placeholder="กรุณากรอกชื่อผู้ใช้งาน"></Input>
+            <Input type="text" placeholder="ชื่อผู้ใช้งาน"></Input>
           </FormGroup>
 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <FormGroup>
-            <Label for="identity">อีเมล</Label>
-            <Input type="text" placeholder="กรุณากรอกอีเมล"></Input>
+            <Input type="text" placeholder="อีเมล"></Input>
           </FormGroup>
 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <FormGroup>
-            <Label for="identity">ยืนยันอีเมล</Label>
-            <Input type="text" placeholder="กรุณากรอกอีเมล"></Input>
+            <Input type="text" placeholder="ยืนยันอีเมล"></Input>
           </FormGroup>
 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <FormGroup>
-            <Label for="identity">รหัสผ่าน</Label>
-            <Input type="text" placeholder="กรุณากรอกรหัสผ่าน"></Input>
+            <Input type="text" placeholder="รหัสผ่าน"></Input>
           </FormGroup>
 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <FormGroup>
-            <Label for="identity">ยืนยันรหัสผ่าน</Label>
-            <Input type="text" placeholder="กรุณากรอกรหัสผ่าน"></Input>
+            <Input type="text" placeholder="ยืนยันรหัสผ่าน"></Input>
           </FormGroup>
+
 
           &nbsp;&nbsp;&nbsp;
           <FormGroup check disabled>
@@ -49,10 +52,15 @@ const Registor = (props) => {
           </FormGroup>
           <br />
 
-          <Button color="success" block>
-            สมัครสมาชิก
-          </Button>
-
+          <center>
+            <Button color="success" block>
+              สมัครสมาชิก
+            </Button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Button color="danger" block>
+              ยกเลิก
+            </Button>
+          </center>
           {/* <br />
           <span className="font-haeds"> เป็นสมาชิกอยู่แล้ว ? เข้าสู่ระบบ </span>
           <br /> */}
