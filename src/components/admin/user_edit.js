@@ -1,52 +1,115 @@
-import {
-    Card, Avatar, Row, Col, Form,
-    Input,
-    Button,
+import { Card, Form, Input, Row, Button, Col, Switch, Typography, Checkbox } from 'antd';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'
 
-} from 'antd';
 
-const user_edit = (props) => {
+const { Title, Text } = Typography;
+const User_edit = (props) => {
+    const router = useRouter()
+    const [disabled, setDisabled] = React.useState(true);
+
+    const toggle = () => {
+        setDisabled(!disabled);
+    };
+
+    const [value, setValue] = useState(undefined);
+    const onChange = () => {
+        setValue(value);
+    };
+
+   
     return (
-        <>
-            <Card>
-                <Row>
-                    <Col span={8} push={7}>
-                        <Col span={20} push={7} style={{ fontSize: 40, }}>รายละเอียด</Col>
-                        <br />
-                        <div>
-                            <Col span={10} push={0}>
-                                <div>
-                                    <Card style={{ width: 500, }}>
-                                        <Form>
-                                            <Form.Item label="รหัสผู้ใช้งาน">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="ชื่อ - นามสกุล">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="อีเมล">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="เบอร์โทรศัพท์">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                           
-                                        </Form>
-                                        <Button type="primary" htmlType="submit" danger>
-                                            ลบข้อมูล
-                                        </Button>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <Button type="primary" htmlType="submit" danger>
-                                            ยกเลิก
-                                        </Button>
-                                    </Card>
-                                </div>
-                            </Col>
-                        </div>
-                    </Col>
-                </Row>
-            </Card>
-        </>
-    );
+        <div>
+            <br />
+            <Row justify="center">
+                &nbsp;&nbsp;&nbsp;
+                <Col >
+                    <Card style={{ width: 800, backgroundColor: 'white', borderRadius: 15 }}>
+                    <Title level={3} style={{ color: 'black' }}>รายละเอียด </Title>
+                  
+                        <Card bordered={false} style={{ borderRadius: 15, backgroundColor: '#F5F5F5' }}>
+
+                        <Row >
+                                <Col span={6}>
+                                    <Title level={5}>รหัสผู้ใช้งาน</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="101" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>ชื่อผู้ใช้งาน</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="panita_21" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>ชื่อ</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="ปณิตา" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>นามสกุล</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="หนันศรี" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                    </Col>
+                            </Row>
+                            <br />
+                            
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>เบอร์โทรศัพท์</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="0825468892" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                   </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>อีเมล</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input  placeholder="nn@gmail.com" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                    </Col>
+                            </Row>
+                            <br />
+
+                            <Row justify="center">
+                               
+                                <Col>
+                                    <Button type="default" size="middle" style={{ borderRadius: 15 }}>
+                                    <span onClick={() => router.push("/admin/user")} > ย้อนกลับ</span>        
+                                    </Button>
+                                </Col>
+                            </Row>
+
+                        </Card>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    )
 }
-export default user_edit
+
+export default User_edit;

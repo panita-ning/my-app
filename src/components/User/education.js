@@ -1,11 +1,11 @@
-import { Card, Form, Input, Row, Button, Col, Typography, TreeSelect, Radio } from 'antd';
+import { Card, Form, Input, Row, Button, Col, Typography, TreeSelect, Radio, Alert } from 'antd';
 import { ReadFilled, } from '@ant-design/icons';
 import React, { useState } from 'react';
 
 const { TreeNode } = TreeSelect;
 const { Title, Text } = Typography;
 
-const Profilethree = (props) => {
+const Education = (props) => {
 
     const [value, setValue] = useState(undefined);
     const onChange = () => {
@@ -14,15 +14,15 @@ const Profilethree = (props) => {
     return (
         <div>
             <div className="site-card-border-less-wrapper" >
-                <Card bordered={false} style={{ width: '100%', backgroundColor: '#D3D3D3', fontSize: 30, borderRadius: 15 }}>
+                <Card bordered={false} style={{ width: 850, backgroundColor: '#D3D3D3', fontSize: 30, borderRadius: 15 }}>
                     <div style={{ width: '100%', }}>
                         <Card style={{ borderRadius: 8, backgroundColor: '#00CC00', height: 70 }}>
                             <Row>
-                                <Col span={1} >
+                                <Col span={2} >
                                     <ReadFilled style={{ fontSize: '30px', color: 'white' }} />
                                 </Col>
 
-                                <Col span={21} >
+                                <Col span={20} >
                                     <Text style={{ fontSize: '20px', color: "white" }} >ประวัติการศึกษา</Text>
                                 </Col>
                                 <Col span={2} >
@@ -49,11 +49,11 @@ const Profilethree = (props) => {
                                             </div>
                                         </Col>
                                     </Row>
-                                    <hr/>
-                                    
+                                    <hr />
+
                                     <Row>
                                         <Col span={12}  >
-                                            <div style={{ width: 400, }}>
+                                            <div style={{ width: 300, }}>
                                                 <Form.Item>
                                                     <Title level={5}>ปีจบการศึกษา</Title>
                                                     <TreeSelect
@@ -77,7 +77,7 @@ const Profilethree = (props) => {
                                             </div>
                                         </Col>
                                         <Col span={12}>
-                                            <div style={{ width: 400, }}>
+                                            <div style={{ width: 300, }}>
                                                 <Form.Item >
                                                     <Title level={5}>ประเทศ</Title>
                                                     <TreeSelect
@@ -100,7 +100,7 @@ const Profilethree = (props) => {
 
                                     <Row>
                                         <Col span={12} >
-                                            <div style={{ width: 400, }}>
+                                            <div style={{ width: 300, }}>
                                                 <Form.Item label="" >
                                                     <Title level={5}>จังหวัดที่ตั้งสถาบัน</Title>
                                                     <TreeSelect
@@ -124,7 +124,7 @@ const Profilethree = (props) => {
                                             </div>
                                         </Col>
                                         <Col span={12} >
-                                            <div style={{ width: 400, }}>
+                                            <div style={{ width: 300, }}>
                                                 <Form.Item >
                                                     <Title level={5}>วุฒิการศึกษา</Title>
                                                     <TreeSelect
@@ -150,8 +150,8 @@ const Profilethree = (props) => {
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col >
-                                            <div style={{ width: 900, }}>
+                                        <Col span={12}>
+                                            <div style={{ width: 300, }}>
                                                 <Form.Item >
                                                     <Title level={5}>สถาบันการศึกษา</Title>
                                                     <TreeSelect
@@ -172,7 +172,27 @@ const Profilethree = (props) => {
                                                 </Form.Item>
                                             </div>
                                         </Col>
+                                        <Col span={8}>
+                                            <div style={{ width: 200, }}>
+                                                <Form.Item  >
+                                                    <Title level={5}>เพิ่มสถาบันเอง </Title>
+                                                    <Input placeholder="" />
+                                                </Form.Item>
+                                            </div>                                               
+                                        </Col>
+                                        <div>
+                                                        <Button htmlType="submit" style={{ borderRadius: 8, backgroundColor: '#FF7F50', color: 'white' }} >
+                                                        เพิ่มสถาบันเอง
+                                                        </Button>
+                                                    </div>
                                     </Row>
+
+
+                                    <Alert
+                                        description=" Tip! หากไม่มีสถาบันการศึกษาให้เลือก สามารถกรอกเพิ่มได้เอง"
+                                        showIcon
+                                    />
+                                    <br />
                                     <Row>
                                         <Col span={8}>
                                             <div style={{ width: 200, }}>
@@ -218,4 +238,4 @@ const Profilethree = (props) => {
     )
 }
 
-export default Profilethree;
+export default Education;

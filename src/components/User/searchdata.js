@@ -5,8 +5,8 @@ import { UploadOutlined, FolderAddFilled } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 const columns = [
-  { title: 'ตำแหน่ง / บริษัท', dataIndex: 'Position / Company', key: 'Position' },
-  { title: 'สถานที่ปฏิบัติงาน / เงินเดือน', dataIndex: 'Location / Salary', key: 'Location' },
+  { title: 'ตำแหน่ง / บริษัท', dataIndex: 'Position', key: 'Position' },
+  { title: 'สถานที่ปฏิบัติงาน / เงินเดือน', dataIndex: 'Location', key: 'Location' },
   {
     title: '',
     dataIndex: '',
@@ -15,8 +15,9 @@ const columns = [
       
       <Space>
         <br/>
-        < Button type="primary" danger > สมัครงาน</Button >
-        < Button type="primary" success > รายละเอียด</Button >
+        < Button type="primary" success >รายละเอียด</Button >
+        < Button type="primary" danger >สมัครงาน</Button >
+        
       </Space>
     )
   },
@@ -25,12 +26,12 @@ const columns = [
 const data = [
   {
     key: 1,
-    Position: '	Software Tester บริษัท สติวเดนท์ แคร์ จำกัด',
+    Position: 'Software Tester บริษัท สติวเดนท์ แคร์ จำกัด',
     Location: 'กรุงเทพมหานคร(เขตลาดพร้าว) 15000 - 30000',
   },
   {
     key: 1,
-    Position: '	Software Tester บริษัท สติวเดนท์ แคร์ จำกัด',
+    Position: 'Software Tester บริษัท สติวเดนท์ แคร์ จำกัด',
     Location: 'กรุงเทพมหานคร(เขตลาดพร้าว) 15000 - 30000',
   },
 

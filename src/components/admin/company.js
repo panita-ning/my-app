@@ -19,6 +19,7 @@ const columns = [
         render: () => (
             <Space>
                 < Button type="primary" success > รายละเอียด</Button >
+                < Button type="primary" danger > ลบข้อมูล</Button >
             </Space>
         )
 
@@ -31,41 +32,41 @@ const data = [
     {
         key: 1,
         id : '1',
-        cp_id: 'xxxxxxx',
-        cp_name: 'xxxxxxx',
-        cp_address: 'xxxxxxx'
+        cp_id: '001',
+        cp_name: 'บริษัท โทลล์เทค จำกัด',
+        cp_address: 'กรุงเทพมหานคร (เขตบางกะปิ)'
 
     },
     {
         key: 1,
         id : '2',
-        cp_id: 'xxxxxxx',
-        cp_name: 'xxxxxxx',
-        cp_address: 'xxxxxxx'
+        cp_id: '002',
+        cp_name: 'บริษัท โพสเซฟี่ กรุ๊ป จำกัด',
+        cp_address: 'กรุงเทพมหานคร (เขตดินแดง)'
 
     },
     {
         key: 1,
         id : '3',
-        cp_id: 'xxxxxxx',
-        cp_name: 'xxxxxxx',
-        cp_address: 'xxxxxxx'
+        cp_id: '003',
+        cp_name: 'บริษัท บางกอกสหประกันชีวิต จำกัด (มหาชน)',
+        cp_address: 'กรุงเทพมหานคร (เขตบางรัก)'
 
     },
     {
         key: 1,
         id : '4',
-        cp_id: 'xxxxxxx',
-        cp_name: 'xxxxxxx',
-        cp_address: 'xxxxxxx'
+        cp_id: '004',
+        cp_name: 'Nemara Consulting Co Ltd.',
+        cp_address: 'กรุงเทพมหานคร (เขตปทุมวัน)'
 
     },
     {
         key: 1,
         id : '5',
-        cp_id: 'xxxxxxx',
-        cp_name: 'xxxxxxx',
-        cp_address: 'xxxxxxx'
+        cp_id: '005',
+        cp_name: 'กรุงเทพมหานคร (เขตปทุมวัน)',
+        cp_address: 'กรุงเทพมหานคร (เขตคลองเตย)'
 
     }
    

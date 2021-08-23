@@ -7,12 +7,12 @@ const onSearch = value => console.log(value);
 
 const columns = [
     { title: 'ลำดับ', dataIndex: 'id', key: 'id' },
-    { title: 'ชื่อ', dataIndex: 'us_firstname', key: 'us_firstname' },
-    { title: 'นามสกุล', dataIndex: 'us_lastname', key: 'us_lastname' },
-    { title: ' ชื่อตำแหน่งงาน', dataIndex: 'ps_name ', key: 'ps_name' },
-    { title: ' วัน/เดือน/ปี รับเข้า', dataIndex: 'accept_date ', key: 'accept_date' },
-    { title: ' วัน/เดือน/ปี หมดสัญญา', dataIndex: 'expire_date ', key: 'expire_date' },
-    { title: ' ชื่อสถานประกอบการ', dataIndex: 'cp_name ', key: 'cp_name' },
+    { title: 'ชื่อ', dataIndex: 'firstname', key: 'firstname' },
+    { title: 'นามสกุล', dataIndex: 'lastname', key: 'lastname' },
+    { title: ' ชื่อตำแหน่งงาน', dataIndex: 'name', key: 'name' },
+    { title: ' วัน/เดือน/ปี รับเข้า', dataIndex: 'acceptdate', key: 'acceptate' },
+    { title: ' วัน/เดือน/ปี หมดสัญญา', dataIndex: 'expiredate', key: 'expiredate' },
+    { title: ' ชื่อสถานประกอบการ', dataIndex: 'cpname', key: 'cpname' },
    
 
 
@@ -36,58 +36,59 @@ const data = [
     {
         key: 1,
         id : '1',
-        us_firstname: 'xxxxxxx',
-        us_lastname: 'xxxxxxx',
-        ps_name: 'xxxxxxx',
-        accept_date: 'xxxxxxx',
-        expire_date: 'xxxxxxx',
-        cp_name: 'xxxxxxx'
+        firstname: 'ปณิตา',
+        lastname: 'หนันศรี',
+        name: 'programmer',
+        acceptdate: '01/02/62',
+        expiredate: '31/08/62',
+        cpname: 'บริษัท มนต์ โลจิสติกส์ กรุ๊ป จำกัด'
         
     },
     {
         key: 1,
         id : '2',
-        us_firstname: 'xxxxxxx',
-        us_lastname: 'xxxxxxx',
-        ps_name: 'xxxxxxx',
-        accept_date: 'xxxxxxx',
-        expire_date: 'xxxxxxx',
-        cp_name: 'xxxxxxx'
-
+        firstname: 'สมชาย',
+        lastname: 'มีบุญ',
+        name: 'System Analys',
+        acceptdate: '01/06/63',
+        expiredate: '30/05/64',
+        cpname: 'บริษัท อินโฟ ซิส เอเชีย จำกัด'
+        
     },
     {
         key: 1,
         id : '3',
-        us_firstname: 'xxxxxxx',
-        us_lastname: 'xxxxxxx',
-        ps_name: 'xxxxxxx',
-        accept_date: 'xxxxxxx',
-        expire_date: 'xxxxxxx',
-        cp_name: 'xxxxxxx'
-
+        firstname: 'ดวงใจ',
+        lastname: 'สุดสวย',
+        name: 'นิติกร',
+        acceptdate: '04/06/63',
+        expiredate: '30/06/64',
+        cpname: 'บริษัท เจ.ดับบลิว. เรียลเอสเตท จำกัด'
+        
     },
     {
         key: 1,
         id : '4',
-        us_firstname: 'xxxxxxx',
-        us_lastname: 'xxxxxxx',
-        ps_name: 'xxxxxxx',
-        accept_date: 'xxxxxxx',
-        expire_date: 'xxxxxxx',
-        cp_name: 'xxxxxxx'
-
+        firstname: 'ทรงศักดิ์',
+        lastname: 'ชื่นชม',
+        name: 'ทนายความ',
+        acceptdate: '01/08/63',
+        expiredate: '01/03/64',
+        cpname: 'บริษัท กฎหมายจักรเพชร จำกัด'
+        
     },
     {
         key: 1,
         id : '5',
-        us_firstname: 'xxxxxxx',
-        us_lastname: 'xxxxxxx',
-        ps_name: 'xxxxxxx',
-        accept_date: 'xxxxxxx',
-        expire_date: 'xxxxxxx',
-        cp_name: 'xxxxxxx'
-
+        firstname: 'สดสี',
+        lastname: 'ยั่งยืน',
+        name: ' Mobile Developer        ',
+        acceptdate: '01/06/64',
+        expiredate: '30/12/64',
+        cpname: 'บริษัท โทลล์เทค จำกัด'
+        
     },
+   
 
 ];
 const Follow = (props) => {

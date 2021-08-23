@@ -7,12 +7,11 @@ const onSearch = value => console.log(value);
 
 const columns = [
     { title: 'ลำดับ', dataIndex: 'id', key: 'id' },
-    { title: 'รหัสผู้ใช้งาน', dataIndex: 'us_id', key: 'us_id' },
-    { title: 'ชื่อผู้ใช้งาน', dataIndex: 'us_username', key: 'us_username' },
-    { title: 'ชื่อ', dataIndex: ' us_firstname', key: ' us_firstname' },
-    { title: 'นามสกุล', dataIndex: ' us_lastname', key: ' us_lastname' },
-    { title: 'เบอร์โทรศัพท์', dataIndex: ' us_phone ', key: ' us_phone ' },
-    { title: 'อีเมล', dataIndex: ' us_email', key: ' us_email' },
+    { title: 'รหัสผู้ใช้งาน', dataIndex: 'usid', key: 'usid' },
+    { title: 'ชื่อ', dataIndex: 'firstname', key: 'firstname' },
+    { title: 'นามสกุล', dataIndex: 'lastname', key: 'lastname' },
+    { title: 'เบอร์โทรศัพท์', dataIndex: 'phone', key: 'phone' },
+    { title: 'อีเมล', dataIndex: 'email', key: 'email' },
 
     {
         title: '',
@@ -34,52 +33,47 @@ const data = [
     {
         key: 1,
         id: '1',
-        us_id: 'xxxxxx',
-        us_username: 'xxxxxx',
-        us_firstname: 'xxxxxx',
-        us_lastname: 'xxxxxx',
-        us_phone: 'xxxxxx',
-        us_email: 'xxxxxx'
+        usid: '101',
+        firstname: 'ปณิตา',
+        lastname: 'หนันศรี',
+        phone: '0825468892',
+        email: 'nn@gmail.com'
     },
     {
         key: 1,
         id: '2',
-        us_id: 'xxxxxx',
-        us_username: 'xxxxxx',
-        us_firstname: 'xxxxxx',
-        us_lastname: 'xxxxxx',
-        us_phone: 'xxxxxx',
-        us_email: 'xxxxxx'
+        usid: '102',
+        firstname: 'สมศรี',
+        lastname: 'สุดสวย',
+        phone: '0936951207',
+        email: 'somsri@gmail.com'
     },
     {
         key: 1,
         id: '3',
-        us_id: 'xxxxxx',
-        us_username: 'xxxxxx',
-        us_firstname: 'xxxxxx',
-        us_lastname: 'xxxxxx',
-        us_phone: 'xxxxxx',
-        us_email: 'xxxxxx'
+        usid: '103',
+        firstname: 'ประหยัด',
+        lastname: 'มั่งมี',
+        phone: '0856223986',
+        email: 'papp@gmail.com'
     },
     {
         key: 1,
         id: '4',
-        us_id: 'xxxxxx',
-        us_username: 'xxxxxx',
-        us_firstname: 'xxxxxx',
-        us_lastname: 'xxxxxx',
-        us_phone: 'xxxxxx',
-        us_email: 'xxxxxx'
+        usid: '104',
+        firstname: 'สายใจ',
+        lastname: 'บุญสุข',
+        phone: '0814379938',
+        email: 'sai@gmail.com'
     },
     {
         key: 1,
         id: '5',
-        us_id: 'xxxxxx',
-        us_username: 'xxxxxx',
-        us_firstname: 'xxxxxx',
-        us_lastname: 'xxxxxx',
-        us_phone: 'xxxxxx',
-        us_email: 'xxxxxx'
+        usid: '105',
+        firstname: 'อรทัย',
+        lastname: 'ไกลฟ้า',
+        phone: '0986123974',
+        email: 'on_02@gmail.com'
     },
 
 ];

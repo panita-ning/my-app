@@ -1,79 +1,136 @@
 import React from 'react';
-import { Card, CardBody, Button, CardTitle, CardText, CardImg, CardDeck, CardSubtitle, Image } from 'reactstrap';
+import { Card, Image, Col, Row, TreeSelect, Button, Typography, Avatar } from 'antd';
 
 
 
-
+const { Title, Text } = Typography;
 const jobdata = (props) => {
 
   return (
     <div>
-      <center>
-   
-      <Card style={{width:800}}>
-        <CardImg top width="100%" src="https://www.prachachat.net/wp-content/uploads/2020/11/5415_9856.jpg" alt="Card image cap" style={{ width: 150 }} />
-        <CardBody>
-       
-          <CardTitle tag="h5">Home Product Center (Public) Co., Ltd.</CardTitle>
-          <CardText>Home Product Center Plc. was founded in 1995, we quickly expanded our business nowsaday we already have more than 60 branches all over Thailand and our company was listed in the Stock Exchange of Thailand since 2001. Over sixteen years in the name of your familiar HOMEPRO we keep on giving our customer better service better experience and better valued added, every year we continued expanding our business, expanding our new store for serving for more.
+      <Card style={{ width: "100%", backgroundColor: '#DCDCDC' }}>
+        <div >
+          <Row justify="center">
+            <Card style={{ backgroundColor: '#FFFFFF', width: 1050 }}>
+              <Row justify="center">
+                <Col>
+                  <div>
+                    <Image
+                      width={1000}
+                      height={300}
+                      src="https://blog.lnw.co.th/wp-content/uploads/2019/09/%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%9A%E0%B8%A5%E0%B9%8A%E0%B8%AD%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9B%E0%B8%B9%E0%B8%99.png"
+                    />
+                  </div>
+                </Col>
+              </Row>
+              <br />
+              <Row>
+                <Col span={5} >
+                  <div>
+                    <Avatar shape="square" size={150} src="https://cmweborigin.com/wp-content/uploads/2021/05/computer.jpg" />
 
-            In this year 2021, we will open the new branch in Vietnam if you are looking for the somethings challenge, more successful and more better living. We would like to invite you to join with our business and be a part of our success team, no matter you need talents or you want to utilize your expertise please join us today and we will "Grow" together.</CardText>
-
-          <CardText style={{ fontSize: 25, color: 'Black', textAlign:'left' }}>&nbsp;&nbsp;&nbsp;สวัสดิการ </CardText>
-          <ul style={{textAlign:'left'}}>
-            <ul>
-              <ul>
-                <CardText>๐ โบนัส</CardText>
-                <CardText>๐ เบี้ยขยัน</CardText>
-                <CardText>๐ ค่ารักษาพยาบาล</CardText>
-                <CardText>๐ กองทุนสำรองเลี้ยงชีพ</CardText>
-                <CardText>๐ ประกันชีวิต</CardText>
-              </ul>
-            </ul>
-          </ul>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <CardText style={{ fontSize: 25, color: 'Black', textAlign:'left' }}>&nbsp;&nbsp;&nbsp;3 ตำแหน่ง</CardText>
-
-          <CardDeck>
-            <Card style={{textAlign:'left'}}>
-              <CardBody>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">1.</CardSubtitle>
-                <CardTitle tag="h5">เจ้าหน้าที่ประสานงานสาขา โฮมโปรสมุทรสงคราม (แม่กลอง)</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">เขตภาษีเจริญ กรุงเทพมหานคร </CardSubtitle>
-              </CardBody>
+                  </div>
+                </Col>
+                <Col>
+                  <div style={{ width: "100%", }}>
+                    <Title style={{ fontSize: 25, color: '#CC0000' }}>JOB CENTER</Title>
+                    <Text type="secondary"> หางาน บริษัท JOB CENTER จำกัด / หางาน / หางาน</Text>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Title style={{ fontSize: 20, color: '#CC0000' }}> Wordpress Developer , Web Developer</Title>
+                  </div>
+                </Col>
+                <Col >
+                  <div style={{ width: "100%" }}>
+                    <Button  htmlType="submit" style={{ borderRadius: 8,backgroundColor:'#CC0000',color:'white' }} >
+                      สมัครงาน
+                    </Button>
+                  </div>
+                </Col>
+              </Row>
+              <hr/>
+              
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}> รายละเอียดงาน</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> รูปแบบงาน : </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> จำนวนที่รับ :</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> สถานที่ปฏิบัติงาน : </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> เงินเดือน(บาท) :</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> วันหยุด :</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> เวลาทำงาน :</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> เวลาทำงานอื่น :</Text></Col>
+                  </div>
+                </Col>
+              </Row>
+              <hr/>
+              
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}> หน้าที่ความรับผิดชอบ</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> - สร้างเว็บไซต์ ด้วยการใช้ WordPress เป็นหลัก  </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> - บริหารจัดการ WordPress หลาย Site พร้อมกัน </Text></Col>
+                  </div>
+                </Col>
+              </Row>
+              <hr/>
+              
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}> คุณสมบัติ</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> เพศ :  </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> อายุ(ปี) : </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> ระดับการศึกษา : </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> ประสบการณ์(ปี) : </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> อื่นๆ : ไม่ระบุ </Text></Col>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}> คุณสมบัติเพิ่มเติม</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}>- มีความรู้ และสามารถต่อยอด Server, Cloud, Google Search Console , Google Analytics. รวมถึง Online Marketing, SEO หรือ CMS </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> - มีความคิดสร้างสรรค์ มนุษสัมพันธ์ดีและมีความกระตือรือร้นในการทำงาน </Text></Col>
+                  </div>
+                </Col>
+              </Row>
+              <hr/>
+              
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}>สวัสดิการ</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> - ประกันสังคม </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}> - เงินโบนัสตามผลงาน</Text></Col>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col span={21}>
+                  <div style={{ width: "100%" }}>
+                    <Col><Title style={{ fontSize: 15, color: '#CC0000' }}> สวัสดิการอื่นๆ</Title></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}>- กองทุนทดแทน</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}>- วันหยุดพักผ่อนประจำปี (ตามอายุงาน) </Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}>- วันหยุดตามประเพณีและนักขัตฤกษ์</Text></Col>
+                    <Col><Text style={{ fontSize: 15, color: 'black' }}>- และอื่นๆตามนโยบายการพัฒนาในอนาคต </Text></Col>
+                  </div>
+                </Col>
+              </Row>
             </Card>
-
-            <Card style={{textAlign:'left'}}>
-              <CardBody>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">2.</CardSubtitle>
-                <CardTitle tag="h5">ผู้จัดการแผนกตรวจรับสินค้า</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">อ.เมืองระยอง จ.ระยอง</CardSubtitle>
-              </CardBody>
-            </Card>
-
-            <Card style={{textAlign:'left'}}>
-              <CardBody>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">3.</CardSubtitle>
-                <CardTitle tag="h5">พนักงานออกแบบ ประจำสาขาหัวหิน,ชุมพร,อุบลราชธานี,ชัยภูมิ,ระยอง ด่วนมาก</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">อ.พุทธมณฑล จ.นครปฐม</CardSubtitle>
-              </CardBody>
-            </Card>
-
-          </CardDeck>
-          <br />
-          <center>
-            <CardTitle tag="h5">ติดต่อ</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">Manpower Management Home Product Center (Public) Co., Ltd.</CardSubtitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">31 ถนนประชาชื่นนนทบุรีตำบลบางเขน อำเภอเมืองนนทบุรี จังหวัดนนทบุรี 11000</CardSubtitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">โทรศัพท์: 02-832-1000 ต่อ 6015   แฟกซ์: 02-832-1299   เว็บไซต์: http://www.homepro.co.th</CardSubtitle>
-          </center>
-        </CardBody>
-
+          </Row>
+        </div>
       </Card>
-      
-
-      </center>
     </div>
   );
 };

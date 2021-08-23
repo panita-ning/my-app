@@ -1,2 +1,2 @@
-import Homepage from "../../src/components/User/homepage"
-export default Homepage
+import Home from "../../src/components/User/home"
+export default Home

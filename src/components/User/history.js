@@ -6,12 +6,12 @@ import { UploadOutlined, FolderAddFilled } from '@ant-design/icons';
 const { Title, Text } = Typography;
 
 const columns = [
-  { title: '	ประวัติ', dataIndex: 'Resume', key: 'Resume' },
-  { title: '	ตำแหน่ง / บริษัท', dataIndex: 'Position / Company', key: 'Position' },
-  { title: 'สถานที่ปฏิบัติงาน / เงินเดือน', dataIndex: 'Location / Salary', key: 'Location' },
-  { title: 'วันที่สมัคร', dataIndex: 'Apply Date', key: 'Apply_Date' },
-  { title: 'วันที่เปิดอ่าน', dataIndex: 'Read Date', key: 'Read_Date' },
-  { title: 'สถานะ', dataIndex: 'Status', key: 'Status' },
+  { title: 'ประวัติ', dataIndex: 'Resume', key: 'Resume' ,align:'center'},
+  { title: 'ตำแหน่ง / บริษัท', dataIndex: 'Position', key: 'Position',align:'center' },
+  { title: 'สถานที่ปฏิบัติงาน / เงินเดือน', dataIndex: 'Location', key: 'Location',align:'center' },
+  { title: 'วันที่สมัคร', dataIndex: 'ApplyDate', key: 'Apply_Date',align:'center' },
+  { title: 'วันที่เปิดอ่าน', dataIndex: 'ReadDate', key: 'Read_Date',align:'center' },
+  { title: 'สถานะ', dataIndex: 'Status', key: 'Status',align:'center' },
   
   {
     title: '',
@@ -46,7 +46,7 @@ const data = [
   },
 
 ];
-const Searchdata = (props) => {
+const History = (props) => {
   return (
     <div>
       <div className="site-card-border-less-wrapper" >
@@ -84,4 +84,4 @@ const Searchdata = (props) => {
   )
 }
 
-export default Searchdata;
+export default History;

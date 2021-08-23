@@ -1,5 +1,4 @@
-import '../styles/globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'antd/dist/antd.css';
 import { getCookie } from "../src/utils/authen";
 import AuthenticationProvider from "../src/utils/context";
@@ -11,7 +10,7 @@ import Navbaradmin from '../src/components/Navbar/adminnavbar';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  const haveCookie = getCookie("login");
+
 
   const ConditionLayout = () => {
     if (router.pathname === '/user') {
@@ -23,10 +22,10 @@ function MyApp({ Component, pageProps }) {
     if (router.pathname === '/user/myjob') {
       return <Navbar> <Component {...pageProps} /></Navbar>
     }
-    if (router.pathname === '/user/jobone') {
+    if (router.pathname === '/user/history') {
       return <Navbar> <Component {...pageProps} /></Navbar>
     }
-    if (router.pathname === '/user/jobtwo') {
+    if (router.pathname === '/user/setting') {
       return <Navbar> <Component {...pageProps} /></Navbar>
     }
     if (router.pathname === '/user/jobdata') {
@@ -66,51 +65,46 @@ function MyApp({ Component, pageProps }) {
     </UserLayout>
 
   }
+const ConditionLayouts = () => {
+  const role = 1;
 
-  // const ConditionLayouts = () => {
-  //   if (!haveCookie) <Component {...pageProps} />;
+    if (role == 1) {
+      return (
+      
+          <ConditionLayout>
+          <Component {...pageProps} />
+          </ConditionLayout>
+        
+      )
+    }
 
-  //   role = 1;
+    if (role == 2) {
+      return (
+        <Navbarcompany>
+          <Component {...pageProps} />
+        </Navbarcompany>
+      )
+    }
 
-  //   if (haveCookie && role == 1) {
-  //     return (
-  //       <Navbar>
-  //         <Component {...pageProps} />
-  //       </Navbar>
-  //     )
-  //   }
+    if (role == 3) {
+      return (
+        <Navbaradmin>
+          <Component {...pageProps} />
+        </Navbaradmin>
+      );
+    }
+}
 
-  //   if (!haveCookie && role == 2) {
-  //     return (
-  //       <Navbarcompany>
-  //         <Component {...pageProps} />
-  //       </Navbarcompany>
-  //     )
-  //   }
-
-  //   if (!haveCookie && role == 3) {
-  //     return (
-  //       <Navbaradmin>
-  //         <Component {...pageProps} />
-  //       </Navbaradmin>
-  //     );
-  //   }
-  // }
+  
 
   return (
     <AuthenticationProvider>
-      {haveCookie ? (
-        // <ConditionLayouts >
-          <ConditionLayout/>
-        // </ConditionLayouts>
-
-      ) : (
-
-        <Component {...pageProps} />
-      )}
+      <ConditionLayouts />
     </AuthenticationProvider>
 
   )
 }
+
+ 
 
 export default MyApp;

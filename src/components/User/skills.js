@@ -12,7 +12,7 @@ function onChange(checkedValues) {
 
 const { TreeNode } = TreeSelect;
 const { Title,Text } = Typography;
-const Profiletwo = (props) => {
+const Skills = (props) => {
     const [value, setValue] = useState(undefined);
     const onChange = () => {
         setValue(value);
@@ -21,7 +21,7 @@ const Profiletwo = (props) => {
     return (
         <div>
             <div className="site-card-border-less-wrapper" >
-                <Card bordered={false} style={{ width: '100%', backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15 }}>
+                <Card bordered={false} style={{ width: 850, backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15 }}>
                 <div style={{ width: '100%', }}>
                         <Card style={{ borderRadius: 8, backgroundColor: '#00CC00', height: 70 }}>
                             <Row>
@@ -50,13 +50,29 @@ const Profiletwo = (props) => {
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <Title level={5}>ทักษะความรู้ตามสาขาอาชีพ-Hard Skills</Title>
                                     <Row>
-                                        <Col span={10}>
+                                    <Col span={10}  >
                                             <div style={{ width: 300, }}>
-                                                <Form.Item  >
-                                                    <Input placeholder="ระบุทักษะความรู้" />
+                                                <Form.Item>
+                                                    <TreeSelect
+                                                        showSearch
+                                                        style={{ width: '100%' }}
+                                                        value={value}
+                                                        dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                                                        placeholder="-- เลือก --"
+                                                        allowClear
+                                                        treeDefaultExpandAll
+                                                        onChange={onChange}
+                                                    >
+                                                        <TreeNode value="parent 1" title="คอมพิวเตอร์" />
+                                                        <TreeNode value="parent 2" title="กฏหมาย" />
+                                                        <TreeNode value="parent 3" title="บัญชี" />
+                                                        <TreeNode value="parent 3" title="ช่าง" />
+
+                                                    </TreeSelect>
                                                 </Form.Item>
                                             </div>
                                         </Col>
+
                                         <Col span={10}  >
                                             <div style={{ width: 300, }}>
                                                 <Form.Item>
@@ -231,7 +247,7 @@ const Profiletwo = (props) => {
                                     <hr/>
                                     <br/>
                                     <Row>
-                                        <Col >
+                                        <Col span={11}>
                                             <div style={{ width: 400, }}>
                                                 <Form.Item >
                                                     <Title level={5}>ความสามารถในการขับขี่</Title>
@@ -267,4 +283,4 @@ const Profiletwo = (props) => {
     )
 }
 
-export default Profiletwo;
+export default Skills;

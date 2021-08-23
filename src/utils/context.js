@@ -5,8 +5,8 @@ const AuthenticationProvider = (props) => {
   const router = useRouter();
 
   useEffect(() => {
-    const haveCookie = getCookie("login");
-    if (!haveCookie) router.push("/login");
+    const haveCookie = getCookie("");
+    if (!haveCookie) router.push("");
   }, []);
   return <>{props.children}</>;
 };

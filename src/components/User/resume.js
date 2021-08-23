@@ -4,13 +4,13 @@ import { UploadOutlined,FolderAddFilled } from '@ant-design/icons';
 
 
 const { Title,Text } = Typography;
-const Profilefive = (props) => {
+const Resume = (props) => {
 
 
     return (
         <div>
             <div className="site-card-border-less-wrapper" >
-                <Card bordered={false} style={{ width: '100%', backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15, }}>
+                <Card bordered={false} style={{ width: 850, backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15, }}>
                 <div style={{ width: '100%', }}>
                         <Card style={{ borderRadius: 8, backgroundColor: '#00CC00', height: 70 }}>
                             <Row>
@@ -54,6 +54,7 @@ const Profilefive = (props) => {
                                         <Button icon={<UploadOutlined />}>เลือกไฟล์</Button>
                                     </Upload>
                                     <br/>
+                                    <Text type="secondary" style={{fontSize:18}}>ชื่อไฟล์  :  </Text>
                                     <Upload
                                         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                         listType="picture"   
@@ -81,4 +82,4 @@ const Profilefive = (props) => {
     )
 }
 
-export default Profilefive;
+export default Resume;

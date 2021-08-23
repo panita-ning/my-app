@@ -1,84 +1,158 @@
-import React from 'react';
-import {
-    Col, Row, Button, Form, FormGroup, Label, Input, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle
-} from "reactstrap";
+import React, { useState } from "react";
+import { Card, Form, Input, Select, Row, Col, Checkbox, Button, Typography } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+// import axios from "axios";
+import { useRouter } from "next/router";
+const { Title } = Typography;
+
+const formItemLayout = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 6 },
+    },
+    wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+    },
+};
+const tailFormItemLayout = {
+    wrapperCol: {
+        xs: {
+            span: 24,
+            offset: 0,
+        },
+        sm: {
+            span: 10,
+            offset: 8,
+        },
+    },
+};
 
 const Registor = (props) => {
+    const router = useRouter();
+    const [form] = Form.useForm();
+
+    //   const onFinish = async (values) => {
+    //     const { Regis_user, Regis_password, Regis_name, Regis_lastname, Regis_email, Regis_phone } = values
+    //     console.log(Regis_user, Regis_password, Regis_name, Regis_lastname, Regis_email, Regis_phone);
+    //     const result = await axios({
+    //       method: "POST",
+    //       url: "/api/auth/register",
+    //       data: {
+    //         Regis_user,
+    //         Regis_password,
+    //         Regis_name,
+    //         Regis_lastname,
+    //         Regis_email,
+    //         Regis_phone
+    //       }
+    //     })
+    //     const { data } = result
+    //     console.log(data);
+    //     if (!data?.data) return message.error("ข้อมูลไม่ถูกต้อง", 5)
+    //   };
+
+    //   const onFinishFailed = (errorInfo) => {
+    //     console.log("Failed:", errorInfo);
+    //   };
+
     return (
-        <div className="div-back">
+        <>
             <br />
-            <Form className="Card-body" >
-                <Form className="reg-body">
-                    <br />
-                    <center>
-                        <h1>
-                            <span className="font-haeds" > สมัครสมาชิก </span>
-                        </h1>
-                    </center>
-                    <br />
+            <br />
+            <center>
+                <Card
+                    hoverable
+                    style={{ width: 500 }}>
+                    <Title>สมัครสมาชิก  </Title>
+                    <Form
+                        {...formItemLayout}
+                        form={form}
+                        name="register"
+                    // onFinish={onFinish}
+                    // onFinishFailed={onFinishFailed}
+                    >
+                        
+                        <Form.Item
+                            name="Regis_user"
+                            label="ผู้ใช้งาน"
+                            rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                    <FormGroup>
-                        <Input type="text" placeholder="ชื่อผู้ใช้งาน"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="Regis_password"
+                            label="รหัสผ่าน"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your password!',
+                                },
+                            ]}
+                            hasFeedback
+                        >
+                            <Input.Password />
+                        </Form.Item>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="อีเมล"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="Regis_name"
+                            label="ชื่อ"
+                            rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="ยืนยันอีเมล"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="Regis_lastname"
+                            label="นามสกุล"
+                            rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="รหัสผ่าน"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="Regis_email"
+                            label="อีเมล"
+                            rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="ยืนยันรหัสผ่าน"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="Regis_phone"
+                            label="เบอร์โทร"
+                            rules={[{ required: true, message: 'Please input your phone number!' }]}
+                        >
+                            <Input style={{ width: '100%' }} />
+                        </Form.Item>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="ชื่อสถานประกอบการ"></Input>
-                    </FormGroup>
+                        <Form.Item
+                            name="agreement"
+                            valuePropName="checked"
+                            rules={[
+                                {
+                                    validator: (_, value) =>
+                                        value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
+                                },
+                            ]}
+                            {...tailFormItemLayout}
+                        >
+                            <Checkbox>
+                                ยอมรับข้อตกลง
+                            </Checkbox>
+                        </Form.Item>
+                        <Form.Item {...tailFormItemLayout}>
+                            <Button type="primary" htmlType="submit">
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormGroup>
-                        <Input type="text" placeholder="ลักษณะธุรกิจ"></Input>
-                    </FormGroup>
+                                สมัครสมาชิก
 
-                    &nbsp;&nbsp;&nbsp;
-                    <FormGroup check disabled>
-                        <Label check>
-                            <Input type="radio" name="radio1" disabled />{' '}
-                            ยอมรับ เงื่อนไขข้อตกลงการใช้บริการ และ นโยบายความเป็นส่วนตัว
-                        </Label>
-                    </FormGroup>
-                    <br />
-
-                    <center>
-                        <Button color="success" block>
-                            สมัครสมาชิก
-                        </Button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Button color="danger" block>
-                            ยกเลิก
-                        </Button>
-                    </center>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    {/* <br />
-          <span className="font-haeds"> เป็นสมาชิกอยู่แล้ว ? เข้าสู่ระบบ </span>
-          <br /> */}
-
-                </Form>
-            </Form>
-
-        </div >
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Card>
+            </center>
+        </>
     );
 };
 

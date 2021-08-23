@@ -3,7 +3,7 @@ import { ContactsFilled } from '@ant-design/icons';
 import { Card, Form, Input, Row, Button, Col, Typography, TreeSelect,Radio } from 'antd';
 const { TreeNode } = TreeSelect;
 const { Title,Text } = Typography;
-const Profilefour = (props) => {
+const Experience = (props) => {
 
     const [value, setValue] = useState(undefined);
     const onChange = () => {
@@ -12,7 +12,7 @@ const Profilefour = (props) => {
     return (
         <div>
             <div className="site-card-border-less-wrapper" >
-                <Card bordered={false} style={{ width: '100%', backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15 }}>
+                <Card bordered={false} style={{ width: 850, backgroundColor: '#D3D3D3', fontSize: 30,borderRadius: 15 }}>
                 <div style={{ width: '100%', }}>
                         <Card style={{ borderRadius: 8, backgroundColor: '#00CC00', height: 70 }}>
                             <Row>
@@ -199,7 +199,7 @@ const Profilefour = (props) => {
                                     </Row>
                                     <Row>
                                         <Col span={15}>
-                                            <div style={{ width: 860, }}>
+                                            <div style={{ width: 700, }}>
                                                 <Form.Item  >
                                                 <Title level={5}>หน้าที่ความรับผิดชอบ</Title>
                                                     <Input.TextArea placeholder="ระบุหน้าที่ความรับผิดชอบ" />
@@ -227,4 +227,4 @@ const Profilefour = (props) => {
     )
 }
 
-export default Profilefour;
+export default Experience;

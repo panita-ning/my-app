@@ -1,3 +1,2 @@
-
-import Profile from "../../src/components/User/profile"
+import Profile from "../../src/components/User/profile";
 export default Profile

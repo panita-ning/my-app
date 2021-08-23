@@ -1,57 +1,117 @@
-import {
-    Card, Avatar, Row, Col, Form,
-    Input,
-    Button,
+import { Card, Form, Input, Row, Button, Col, Switch, Typography, Checkbox } from 'antd';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'
 
-} from 'antd';
 
+const { Title, Text } = Typography;
 const follow_show = (props) => {
+    const router = useRouter()
+    const [disabled, setDisabled] = React.useState(true);
+
+    const toggle = () => {
+        setDisabled(!disabled);
+    };
+
+    const [value, setValue] = useState(undefined);
+    const onChange = () => {
+        setValue(value);
+    };
+
+   
     return (
-        <>
-            <Card>
-                <Row>
-                    <Col span={8} push={7}>
-                        <Col span={20} push={7} style={{ fontSize: 40, }}>รายละเอียด</Col>
-                        <br />
-                        <div>
-                            <Col span={10} push={0}>
-                                <div>
-                                    <Card style={{ width: 500, }}>
-                                        <Form>
-                                        <Form.Item label="ไอดีสมัครงาน">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="ชื่อ">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="นามสกุล">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="ชื่อตำแหน่งงาน">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="วัน/เดือน/ปี รับเข้า">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="วัน/เดือน/ปี หมดสัญญา">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                            <Form.Item label="ชื่อสถานประกอบการ">
-                                                <Input placeholder="xxxxxxxxxxx" />
-                                            </Form.Item>
-                                        </Form>
-                                        <Button type="primary" htmlType="submit" danger>
-                                            ย้อนกลับ
-                                        </Button>
-                                       
-                                    </Card>
-                                </div>
-                            </Col>
-                        </div>
-                    </Col>
-                </Row>
-            </Card>
-        </>
-    );
+        <div>
+            <br />
+            <Row justify="center">
+                &nbsp;&nbsp;&nbsp;
+                <Col >
+                    <Card style={{ width: 800, backgroundColor: 'white', borderRadius: 15 }}>
+                    <Title level={3} style={{ color: 'black' }}>รายละเอียด </Title>
+                  
+                        <Card bordered={false} style={{ borderRadius: 15, backgroundColor: '#F5F5F5' }}>
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>ชื่อ</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>นามสกุล</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                    </Col>
+                            </Row>
+                            <br />
+                            
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>ชื่อตำแหน่งงาน</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input type="password" placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                   </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>วัน/เดือน/ปี รับเข้า</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input type="password" placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                    </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>วัน/เดือน/ปี หมดสัญญา</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input type="password" placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                   </Col>
+                            </Row>
+                            <br />
+
+                            <Row >
+                                <Col span={6}>
+                                    <Title level={5}>ชื่อสถานประกอบการ</Title>
+                                </Col>
+                                &nbsp;&nbsp;&nbsp;
+                                <Col>
+                                    <Input type="password" placeholder="Basic usage" disabled={disabled}  style={{ width: 400, borderRadius: 10 }} />
+                                   </Col>
+                            </Row>
+                            <br />
+                          
+                            
+
+                            <Row justify="center">
+                               
+                                <Col>
+                                    <Button type="default" size="middle" style={{ borderRadius: 15 }}>
+                                    <span onClick={() => router.push("/admin/follow")} > ย้อนกลับ</span>  
+                                    </Button>
+                                </Col>
+                            </Row>
+
+                        </Card>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    )
 }
-export default follow_show
+
+export default follow_show;
